@@ -1,24 +1,19 @@
-import userStore from "../store/user";
-import { ReactElement, useEffect, useState } from "react";
-import { FloatButton, Overlay, Wrapper } from "../components/index";
-import { useNavigate } from "react-router-dom";
-
+import { ReactElement, useState } from "react";
 export const Layout = ({ children }: Props) => {
-  const navigate = useNavigate();
-  const { user } = userStore();
-
-  useEffect(() => {
-    user.email === "" ? navigate("/start") : navigate("/create");
-  }, [user]);
-
   const [state, setState] = useState(false);
 
   return (
-    <Wrapper>
-      <FloatButton onClick={() => setState(!state)}>Activar</FloatButton>
-      {state && <Overlay />}
+    <div>
+      <div className="w-36 z-10 fixed bottom-0 left-0">
+        <button className="" onClick={() => setState(!state)}>
+          Activar
+        </button>
+      </div>
+      {state && (
+        <div className="bg-black/10 fixed top-0 left-0 w-screen h-screen"></div>
+      )}
       {children}
-    </Wrapper>
+    </div>
   );
 };
 

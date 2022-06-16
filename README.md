@@ -1,5 +1,5 @@
 PROPUESTA:
-Codery crea una conexion entre negocios que buscan mejorar la experiencia de compra de sus clientes al pedir hacer pedidos mediante Internet.
+Codery crea una conexion entre negocios que buscan mejorar la experiencia de compra de sus clientes al hacer pedidos mediante Internet.
 
 ##### PASOS DEL LADO CLIENTE:
 

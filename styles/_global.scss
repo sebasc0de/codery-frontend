@@ -1,0 +1,68 @@
+@import "./variables";
+
+body {
+  font-family: "Inter";
+}
+
+// Text variables
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $primary;
+}
+
+h4 {
+  color: $alternate;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-align: center;
+}
+
+small {
+  color: $secondary;
+  font-size: 0.875rem;
+}
+
+a {
+  color: $alternate;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+p {
+  color: $secondary;
+  font-size: 1.2rem;
+}
+
+// Divs and sections variables
+
+section {
+  padding: 5%;
+  min-height: 100vh;
+}
+
+section.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.5rem;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: $soft;
+}
