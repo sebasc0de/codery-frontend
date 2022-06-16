@@ -1,4 +1,4 @@
-export const startSession = async (email: string) => {
+export const startSession = async (email: string, password: string) => {
   // Check if user exists
 
   try {
@@ -7,7 +7,7 @@ export const startSession = async (email: string) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ email, password }),
     });
     const response = await request.json();
     return response;

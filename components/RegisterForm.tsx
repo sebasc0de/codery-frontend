@@ -1,7 +1,7 @@
+import { useField } from "../hooks/useField";
 import { Small } from "./Small";
-import { startSession } from "../helpers/startSession";
 import { Title } from "./Title";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import userStore from "../store/user";
 
@@ -12,12 +12,13 @@ export const RegisterForm = () => {
   //Global state managmente
   const { setUser, user } = userStore();
 
-  // On change input state
-  const [onChange, setOnChange] = useState("");
+  // Manage email and password onChange handler
+  const email = useField({ type: "email" });
+  const password = useField({ type: "password" });
 
   // Login button handler
   const loginHandler = () => {
-    startSession(onChange).then(setUser).catch();
+    alert("Falta el fetch");
   };
 
   //Effect for manage when user state change
@@ -29,21 +30,8 @@ export const RegisterForm = () => {
     <div>
       {/* Title */}
       <Title title="¡Toma el control!" parraph="Hasta que llegue el delivery" />
-      <input
-        placeholder="Tu apodo (Opcional)"
-        value={onChange}
-        onChange={(e) => setOnChange(e.target.value)}
-      />
-      <input
-        placeholder="Correo electronico..."
-        value={onChange}
-        onChange={(e) => setOnChange(e.target.value)}
-      />
-      <input
-        placeholder="Nueva contraseña..."
-        value={onChange}
-        onChange={(e) => setOnChange(e.target.value)}
-      />
+      <input {...email} placeholder="Correo electronico..." />
+      <input {...password} placeholder="Nueva contraseña..." />
       <button onClick={loginHandler}>Crear mi cuenta</button>
       <Small text="Ingresa tus datos para continuar" />
     </div>
