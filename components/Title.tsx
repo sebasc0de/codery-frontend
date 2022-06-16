@@ -9,7 +9,7 @@ export const Title = ({ title, preTitle, parraph, space = "mb-3" }: Props) => {
 };
 
 interface Props {
-  preTitle: string;
+  preTitle?: string;
   title: string;
   parraph: string;
   space?: "mb-3" | "mt-3";

@@ -2,6 +2,7 @@ export { Box } from "./Box";
 export { Wrapper } from "./Wrapper";
 export { GradientButton } from "./GradientButton";
 export { LoginForm } from "./LoginForm";
+export { RegisterForm } from "./RegisterForm";
 export { Logo } from "./Logo";
 export { Spacer } from "./Spacer";
 export { Title } from "./Title";
