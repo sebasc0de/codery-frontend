@@ -1,7 +1,7 @@
-import { useField } from "../hooks/useField";
 import { Small } from "./Small";
 import { Title } from "./Title";
 import { useEffect } from "react";
+import { useField } from "../hooks/useField";
 import { useNavigate } from "react-router-dom";
 import userStore from "../store/user";
 
@@ -23,7 +23,7 @@ export const RegisterForm = () => {
 
   //Effect for manage when user state change
   useEffect(() => {
-    user.email.length > 3 && navigate("/create");
+    if (user && user.email.length > 3) navigate("/create");
   }, [user]);
 
   return (

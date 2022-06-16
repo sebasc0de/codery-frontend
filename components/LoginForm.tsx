@@ -2,9 +2,9 @@ import { Small } from "./Small";
 import { startSession } from "../helpers/startSession";
 import { Title } from "./Title";
 import { useEffect } from "react";
+import { useField } from "../hooks/useField";
 import { useNavigate } from "react-router-dom";
 import userStore from "../store/user";
-import { useField } from "../hooks/useField";
 
 export const LoginForm = () => {
   //React router dom navigation
@@ -24,7 +24,7 @@ export const LoginForm = () => {
 
   //Effect for manage when user state change
   useEffect(() => {
-    user.email.length > 3 && navigate("/create");
+    if (user && user.email.length > 3) navigate("/create");
   }, [user]);
 
   return (
