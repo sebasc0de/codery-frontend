@@ -14,8 +14,12 @@ export const loginUser = async (
     });
     const response = await request.json();
     setLoading(false);
+
+    if (response.errors) {
+      return { msg: response.errors[0].msg };
+    }
     return response;
   } catch (err) {
-    console.log(err);
+    return { msg: "Hubo un error con el servidor" };
   }
 };

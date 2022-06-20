@@ -1,0 +1,13 @@
+@import "./variables";
+
+.error {
+  background-color: white;
+  color: $primary;
+  font-weight: 700;
+  box-shadow: 0px 2px 20px 1px rgba($primary, 0.15);
+  padding: 2.5%;
+  width: 100%;
+  margin: 1rem;
+  border-radius: 5px;
+  border-left: 6px solid $accent;
+}

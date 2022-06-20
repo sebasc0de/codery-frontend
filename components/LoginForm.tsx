@@ -1,5 +1,5 @@
 import { loginUser } from "../helpers/loginUser";
-import { Small, Button } from "./index";
+import { Small, Button, Error } from "./index";
 import { Title } from "./Title";
 import { useField } from "../hooks/useField";
 import { useState } from "react";
@@ -10,7 +10,7 @@ export const LoginForm = () => {
   const [loading, setLoading] = useState(false);
 
   // Set user global store
-  const setUser = userStore((state) => state.setUser);
+  const { setUser, msg } = userStore();
 
   // On change input state User and password
   const email = useField({ type: "email" });
@@ -24,6 +24,7 @@ export const LoginForm = () => {
 
   return (
     <div>
+      <Error msg={msg} />
       {/* Title */}
       <Title title="Inicia sesion" parraph="Con tu cuenta de Codery" />
       <input {...email} placeholder="Correo electronico..." />
@@ -33,7 +34,6 @@ export const LoginForm = () => {
         loadingState={loading}
         onClick={loginHandler}
       />
-
       <Small
         withLink
         text="¿No tienes cuenta?"
