@@ -9,8 +9,13 @@ export const Error = ({ msg }: { msg: string }) => {
   }, [msg]);
 
   return (
-    <div className="w-full fixed top-0 left-0 flex justify-center">
-      <small className={show ? "error" : "hidden"}>{msg}</small>
+    <div
+      onClick={() => setShow(false)}
+      className="w-full fixed top-0 left-0 flex justify-center"
+    >
+      <small className={show ? "error fadeIn" : "error fadeOut"}>
+        {msg}
+      </small>
     </div>
   );
 };

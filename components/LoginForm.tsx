@@ -24,7 +24,7 @@ export const LoginForm = () => {
 
   return (
     <div>
-      <Error msg={msg} />
+      {msg && <Error msg={msg} />}
       {/* Title */}
       <Title title="Inicia sesion" parraph="Con tu cuenta de Codery" />
       <input {...email} placeholder="Correo electronico..." />
