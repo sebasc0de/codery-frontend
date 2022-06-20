@@ -3,21 +3,20 @@ import create from "zustand";
 
 interface MyState {
   user: User;
-  setUser: (user: User) => void;
+  errors: Object;
+  setUser: (response: any) => void;
 }
 
 const userStore = create<MyState>()((set, get) => ({
   user: {
-    archived: false,
     email: "",
     id: "",
-    role: "",
     avatar: "",
+    membership: "",
   },
-  setUser(user) {
-    set({
-      user,
-    });
+  errors: {},
+  setUser(response) {
+    response.error ? set({ errors: response.error }) : set({ user: response });
   },
 }));
 

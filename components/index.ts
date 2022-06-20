@@ -1,10 +1,11 @@
 export { Box } from "./Box";
-export { Wrapper } from "./Wrapper";
+export { Button } from "./Button";
 export { GradientButton } from "./GradientButton";
+export { HeroSection } from "./HeroSection";
 export { LoginForm } from "./LoginForm";
-export { RegisterForm } from "./RegisterForm";
 export { Logo } from "./Logo";
+export { RegisterForm } from "./RegisterForm";
+export { Small } from "./Small";
 export { Spacer } from "./Spacer";
 export { Title } from "./Title";
-export { Small } from "./Small";
-export { HeroSection } from "./HeroSection";
+export { Wrapper } from "./Wrapper";

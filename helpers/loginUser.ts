@@ -1,8 +1,11 @@
-export const startSession = async (email: string, password: string) => {
+export const loginUser = async (
+  email: string,
+  password: string,
+  setLoading: (state: boolean) => void
+) => {
   // Check if user exists
-
   try {
-    const request = await fetch("http://localhost:8080/auth/start", {
+    const request = await fetch("http://localhost:8080/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -10,8 +13,9 @@ export const startSession = async (email: string, password: string) => {
       body: JSON.stringify({ email, password }),
     });
     const response = await request.json();
+    setLoading(false);
     return response;
   } catch (err) {
-    console.log("mi errors", err);
+    console.log(err);
   }
 };

@@ -1,16 +1,17 @@
 export type User = {
   id: string;
-  archived: boolean;
-  password: string;
+  archived?: boolean;
+  password?: string;
   avatar?: string;
+  membership: string;
   email: string;
-  role: string;
 };
 
 export type Order = {
   shippingData: Shipping;
   items: OrderItem[];
   user: User;
+  delivered: boolean;
 };
 
 export type Shipping = {

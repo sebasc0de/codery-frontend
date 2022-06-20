@@ -1,17 +1,16 @@
-import { Small } from "./Small";
-import { startSession } from "../helpers/startSession";
+import { loginUser } from "../helpers/loginUser";
+import { Small, Button } from "./index";
 import { Title } from "./Title";
-import { useEffect } from "react";
 import { useField } from "../hooks/useField";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import userStore from "../store/user";
 
 export const LoginForm = () => {
-  //React router dom navigation
-  const navigate = useNavigate();
+  // Loading state
+  const [loading, setLoading] = useState(false);
 
-  //Global state managmente
-  const { setUser, user } = userStore();
+  // Set user global store
+  const setUser = userStore((state) => state.setUser);
 
   // On change input state User and password
   const email = useField({ type: "email" });
@@ -19,13 +18,9 @@ export const LoginForm = () => {
 
   // Login button handler
   const loginHandler = () => {
-    startSession(email.value, password.value).then(setUser);
+    setLoading(true);
+    loginUser(email.value, password.value, setLoading).then(setUser);
   };
-
-  //Effect for manage when user state change
-  useEffect(() => {
-    if (user && user.email.length > 3) navigate("/create");
-  }, [user]);
 
   return (
     <div>
@@ -33,7 +28,12 @@ export const LoginForm = () => {
       <Title title="Inicia sesion" parraph="Con tu cuenta de Codery" />
       <input {...email} placeholder="Correo electronico..." />
       <input {...password} placeholder="Contraseña..." />
-      <button onClick={loginHandler}>Iniciar sesion</button>
+      <Button
+        buttonText="Iniciar sesion"
+        loadingState={loading}
+        onClick={loginHandler}
+      />
+
       <Small
         withLink
         text="¿No tienes cuenta?"
