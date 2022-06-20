@@ -1,6 +1,16 @@
-import { ReactElement, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import userStore from "../store/user";
 export const Layout = ({ children }: Props) => {
   const [state, setState] = useState(false);
+
+  const navgiate = useNavigate();
+
+  const user = userStore((state) => state.user);
+
+  useEffect(() => {
+    user.email.length > 1 && navgiate("/create");
+  }, [user]);
 
   return (
     <div>
