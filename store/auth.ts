@@ -7,7 +7,7 @@ interface MyState {
   setUser: (response: any) => void;
 }
 
-const userStore = create<MyState>()((set, get) => ({
+const authStore = create<MyState>()((set, get) => ({
   user: {
     email: "",
     id: "",
@@ -20,4 +20,4 @@ const userStore = create<MyState>()((set, get) => ({
   },
 }));
 
-export default userStore;
+export default authStore;

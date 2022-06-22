@@ -38,6 +38,24 @@ p {
   font-size: 1.2rem;
 }
 
+// Header and footer
+header {
+  position: sticky;
+  padding: 0.275rem 0.675rem;
+  display: flex;
+  background: $soft;
+  border-bottom: 0.5px solid rgba($dark, 0.2);
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+}
+
+header svg {
+  width: 1.2rem;
+  fill: $primary;
+}
+
 // Divs and sections variables
 
 section {

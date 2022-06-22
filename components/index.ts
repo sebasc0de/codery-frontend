@@ -10,3 +10,6 @@ export { Spacer } from "./Spacer";
 export { Title } from "./Title";
 export { Wrapper } from "./Wrapper";
 export { Error } from "./Error";
+export { Header } from "./Header";
+export { Bell } from "./Bell";
+export { Ping } from "./Ping";

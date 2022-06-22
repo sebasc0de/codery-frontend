@@ -3,14 +3,14 @@ import { Small, Button, Error } from "./index";
 import { Title } from "./Title";
 import { useField } from "../hooks/useField";
 import { useState } from "react";
-import userStore from "../store/user";
+import authStore from "../store/auth";
 
 export const LoginForm = () => {
   // Loading state
   const [loading, setLoading] = useState(false);
 
   // Set user global store
-  const { setUser, msg } = userStore();
+  const { setUser, msg } = authStore();
 
   // On change input state User and password
   const email = useField({ type: "email" });
@@ -37,7 +37,7 @@ export const LoginForm = () => {
       <Small
         withLink
         text="¿No tienes cuenta?"
-        routerLink="/"
+        routerLink="/register"
         textLink="Registrate"
       />
     </div>

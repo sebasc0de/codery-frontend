@@ -4,4 +4,5 @@ export const errors = [
   "Hubo un error con el servidor",
   "El usuario no existe",
   "Debes ingresar un email valido",
+  "El usuario ya existe",
 ];
