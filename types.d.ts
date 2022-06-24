@@ -7,6 +7,13 @@ export type User = {
   email: string;
 };
 
+export interface Product {
+  id: string;
+  name: string;
+  price: string;
+  url: string[];
+}
+
 export type Order = {
   shippingData: Shipping;
   items: OrderItem[];
@@ -16,9 +23,8 @@ export type Order = {
 
 export type Shipping = {
   adress: string;
+  phone: string;
   city: string;
-  province: string;
-  zipCode: string;
   notes: string;
 };
 

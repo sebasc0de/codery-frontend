@@ -1,10 +1,13 @@
+import { useNavigate } from "react-router-dom";
+import { BackArrow } from "./BackArrow";
 import { Bell } from "./Bell";
-import { Logo } from "./Logo";
 
 export const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <header>
-      <Logo size="w-10" />
+      <BackArrow />
       <Bell />
     </header>
   );

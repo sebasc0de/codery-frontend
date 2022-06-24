@@ -17,3 +17,9 @@ input {
     color: rgba($secondary, 0.95);
   }
 }
+
+@media screen and (max-width: 540px) {
+  input {
+    font-size: 0.775rem;
+  }
+}

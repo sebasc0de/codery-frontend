@@ -4,56 +4,18 @@ body {
   font-family: "Inter";
 }
 
-// Text variables
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: $primary;
-}
-
-h4 {
-  color: $alternate;
-  text-transform: uppercase;
-  font-weight: 800;
-  text-align: center;
-}
-
-small {
-  color: $secondary;
-  font-size: 0.875rem;
-}
-
-a {
-  color: $alternate;
-  font-weight: 600;
-  font-size: 0.875rem;
-}
-
-p {
-  color: $secondary;
-  font-size: 1.2rem;
-}
-
 // Header and footer
 header {
-  position: sticky;
-  padding: 0.275rem 0.675rem;
-  display: flex;
-  background: $soft;
-  border-bottom: 0.5px solid rgba($dark, 0.2);
   width: 100%;
-  justify-content: space-between;
+  display: flex;
   align-items: center;
-  top: 0;
+  justify-content: space-between;
 }
 
 header svg {
-  width: 1.2rem;
+  width: 1rem;
   fill: $primary;
+  cursor: pointer;
 }
 
 // Divs and sections variables
@@ -73,8 +35,8 @@ section.center {
 section.column {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 3.5rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .wrapper {
@@ -84,4 +46,13 @@ section.column {
   height: 100vh;
   width: 100%;
   background-color: $soft;
+}
+
+// Images
+.logo {
+  width: 9rem;
+}
+
+.logoSmall {
+  width: 4.5rem;
 }

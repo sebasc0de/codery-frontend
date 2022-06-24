@@ -1,4 +1,4 @@
-import { Dashboard, CreateOrder } from "../pages/index";
+import { Dashboard, CreateOrder, CreateProduct } from "../pages/index";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import authStore from "../store/auth";
@@ -15,7 +15,8 @@ export const PrivateRoutes = () => {
   return (
     <Routes>
       <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/create" element={<CreateOrder />} />
+      <Route path="/order" element={<CreateOrder />} />
+      <Route path="/product" element={<CreateProduct />} />
     </Routes>
   );
 };

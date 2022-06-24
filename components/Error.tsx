@@ -11,11 +11,9 @@ export const Error = ({ msg }: { msg: string }) => {
   return (
     <div
       onClick={() => setShow(false)}
-      className="w-full fixed top-0 left-0 flex justify-center"
+      className="w-full fixed bottom-0 left-0 flex justify-center"
     >
-      <small className={show ? "error fadeIn" : "error fadeOut"}>
-        {msg}
-      </small>
+      <small className={show ? "error fadeIn" : "error fadeOut"}>{msg}</small>
     </div>
   );
 };

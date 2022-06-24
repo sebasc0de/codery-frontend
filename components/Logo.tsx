@@ -1,11 +1,11 @@
 interface Props {
-  size?: "w-40" | "w-20" | "w-10" | "w-5";
+  small?: boolean;
 }
 
-export const Logo = ({ size = "w-40" }: Props) => {
+export const Logo = ({ small = false }: Props) => {
   return (
     <div className="flex justify-center">
-      <img src="./logo.png" className={size} />
+      <img src="./logo.png" className={small ? "logoSmall" : "logo"} />
     </div>
   );
 };

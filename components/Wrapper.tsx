@@ -1,5 +1,5 @@
 import { ChildrenProps } from "../interfaces/ChildrenProps";
 
-export const Wrapper = ({ children }: ChildrenProps) => {
-  return <div className="wrapper">{children}</div>;
+export const Wrapper = ({ children, className }: ChildrenProps) => {
+  return <section className={`${className}`}>{children}</section>;
 };
