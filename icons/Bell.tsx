@@ -1,4 +1,4 @@
-import { Ping } from "./Ping";
+import { Ping } from "../components/index";
 
 export const Bell = () => {
   return (

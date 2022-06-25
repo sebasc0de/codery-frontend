@@ -1,10 +1,6 @@
-import { useNavigate } from "react-router-dom";
-import { BackArrow } from "./BackArrow";
-import { Bell } from "./Bell";
+import { BackArrow, Bell } from "../icons/index";
 
 export const Header = () => {
-  const navigate = useNavigate();
-
   return (
     <header>
       <BackArrow />

@@ -10,8 +10,8 @@ export type User = {
 export interface Product {
   id: string;
   name: string;
-  price: string;
-  url: string[];
+  price: number;
+  url: string;
 }
 
 export type Order = {

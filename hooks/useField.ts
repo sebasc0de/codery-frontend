@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import { fieldValidator } from "../helpers/fieldValidator";
+import { useState } from "react";
 
-export const useField = ({ type }: { type: string }) => {
-  const [value, setValue] = useState("");
+export function useField<T>(initialValues: T) {
+  const [value, setValue] = useState(initialValues);
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
+  const onChange = (target: HTMLInputElement) => {
+    setValue((prev) => ({
+      ...prev,
+      [target.name]: target.value,
+    }));
   };
 
   return {
-    type,
     value,
     onChange,
   };
-};
+}
