@@ -1,7 +1,9 @@
+import { User } from "../types";
+
 export const loginUser = async (
   email: string,
   password: string,
-  setLoading: (state: boolean) => void
+  setUser: (user: User) => void
 ) => {
   // Check if user exists
   try {
@@ -13,13 +15,8 @@ export const loginUser = async (
       body: JSON.stringify({ email, password }),
     });
     const response = await request.json();
-    setLoading(false);
-
-    if (response.errors) return { msg: response.errors[0].msg };
-
-    return response;
+    setUser(response);
   } catch (err) {
-    setLoading(false);
     return { msg: "Hubo un error con el servidor" };
   }
 };

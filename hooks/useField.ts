@@ -1,4 +1,3 @@
-import { fieldValidator } from "../helpers/fieldValidator";
 import { useState } from "react";
 
 export function useField<T>(initialValues: T) {

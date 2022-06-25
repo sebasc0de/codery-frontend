@@ -1,4 +1,4 @@
-import { Error } from "./Error";
+import { Button } from "./Button";
 import { registerUser } from "../helpers/registerUser";
 import { Small } from "./Small";
 import { Title } from "./Title";
@@ -6,27 +6,44 @@ import { useField } from "../hooks/useField";
 import authStore from "../store/auth";
 
 export const RegisterForm = () => {
-  const { setUser, msg } = authStore();
+  const { setUser } = authStore();
 
   // Manage email and password onChange handler
-  const name = useField({ type: "text" });
-  const email = useField({ type: "email" });
-  const password = useField({ type: "password" });
+  const { value, onChange } = useField({
+    name: "",
+    email: "",
+    password: "",
+  });
 
-  // Login button handler
-  const registerhandler = () => {
-    registerUser(name.value, email.value, password.value).then(setUser);
-  };
+  const { email, name, password } = value;
 
   return (
     <div>
-      {msg && <Error msg={msg} />}
       {/* Title */}
       <Title title="¡Toma el control!" parraph="Hasta que llegue el delivery" />
-      <input {...name} placeholder="Ingresa tu nombre" />
-      <input {...email} placeholder="Ingresa tu correo electronico" />
-      <input {...password} placeholder="Ingresa una contraseña" />
-      <button onClick={registerhandler}>Crear mi cuenta</button>
+      <input
+        type="text"
+        name="name"
+        placeholder="Ingresa tu nombre"
+        onChange={(e) => onChange(e.target)}
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Ingresa tu email"
+        onChange={(e) => onChange(e.target)}
+      />
+      <input
+        name="password"
+        type="password"
+        placeholder="Ingresa tu password"
+        onChange={(e) => onChange(e.target)}
+      />
+
+      <Button
+        buttonText="Crear mi cuenta"
+        onClick={() => registerUser(name, email, password, setUser)}
+      />
       <Small
         withLink
         text="¿Ya tienes cuenta?"

@@ -1,4 +1,5 @@
 import { Box } from "./Box";
+import { Button } from "./Button";
 import { createProduct } from "../helpers/product";
 import { ImageUploader } from "./ImageUploader";
 import { useField } from "../hooks/useField";
@@ -27,7 +28,10 @@ export const ProductForm = () => {
           onChange={(e) => onChange(e.target)}
           placeholder="Precio del producto"
         />
-        <button>Crear producto</button>
+        <Button
+          buttonText="Crear producto"
+          onClick={() => createProduct(value.name, value.price, image)}
+        />
       </Box>
     </div>
   );

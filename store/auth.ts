@@ -3,7 +3,6 @@ import create from "zustand";
 
 interface MyState {
   user: User;
-  msg: string;
   setUser: (response: any) => void;
 }
 
@@ -14,9 +13,8 @@ const authStore = create<MyState>()((set, get) => ({
     avatar: "",
     membership: "",
   },
-  msg: "",
   setUser(response) {
-    response.msg ? set({ msg: response.msg }) : set({ user: response });
+    set({ user: response });
   },
 }));
 

@@ -1,7 +1,10 @@
+import { User } from "../types";
+
 export const registerUser = async (
   name: string,
   email: string,
-  password: string
+  password: string,
+  setUser: (user: User) => void
 ) => {
   try {
     const request = await fetch("http://localhost:8080/auth/register", {
@@ -12,7 +15,6 @@ export const registerUser = async (
       body: JSON.stringify({ name, email, password }),
     });
     const response = await request.json();
-    if (response.errors) return { msg: response.errors[0].msg };
-    return response;
+    setUser(response);
   } catch (err) {}
 };
