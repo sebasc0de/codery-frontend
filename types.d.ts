@@ -3,7 +3,7 @@ export type User = {
   archived?: boolean;
   password?: string;
   avatar?: string;
-  membership: string;
+  suscription: string;
   email: string;
 };
 

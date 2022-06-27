@@ -7,6 +7,9 @@ import authStore from "../store/auth";
 export const LoginForm = () => {
   // Set user global store
   const setUser = authStore((state) => state.setUser);
+  const { user, msg } = authStore();
+
+  console.log(user, msg);
 
   // On change input state User and password
   const { value, onChange } = useField({

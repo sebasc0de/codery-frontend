@@ -1,9 +1,9 @@
-import { User } from "../types";
+import { AuthResponse } from "../interfaces/Response";
 
 export const loginUser = async (
   email: string,
   password: string,
-  setUser: (user: User) => void
+  setUser: (response: AuthResponse) => void
 ) => {
   // Check if user exists
   try {
@@ -14,7 +14,8 @@ export const loginUser = async (
       },
       body: JSON.stringify({ email, password }),
     });
-    const response = await request.json();
+    const response = (await request.json()) as AuthResponse;
+    console.log(response);
     setUser(response);
   } catch (err) {
     return { msg: "Hubo un error con el servidor" };
