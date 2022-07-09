@@ -1,26 +1,29 @@
-import { User } from "../types";
-import create from "zustand";
 import { AuthResponse } from "../interfaces/Response";
+import create from "zustand";
 
 interface MyState {
-  user: User;
+  avatar?: string;
+  suscription?: string;
+  email: string;
   token: string;
-  msg: string;
   setUser: (response: AuthResponse) => void;
 }
 
 const authStore = create<MyState>()((set, get) => ({
-  user: { email: "", id: "", avatar: "", suscription: "" },
+  email: "",
+  avatar: "",
+  suscription: "",
   token: "",
-  msg: "",
   setUser(response) {
-    const { token, msg, ...user } = response;
-
-    set({
-      user,
-      token,
-      msg,
-    });
+    const { token, email, avatar, suscription } = response;
+    if (token) {
+      set({
+        avatar,
+        token,
+        email,
+        suscription,
+      });
+    }
   },
 }));
 

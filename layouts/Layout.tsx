@@ -3,13 +3,15 @@ import { useNavigate } from "react-router-dom";
 import authStore from "../store/auth";
 
 export const Layout = ({ children }: Props) => {
-  const navgiate = useNavigate();
+  const navigate = useNavigate();
 
-  const user = authStore((state) => state.user);
+  const { token, ...rest } = authStore();
+
+  console.log(rest);
 
   useEffect(() => {
-    user.email && navgiate("/dashboard");
-  }, [user]);
+    token ? navigate("/dashboard") : navigate("/login");
+  }, [token]);
 
   return <div>{children}</div>;
 };

@@ -1,10 +1,6 @@
 import { AuthResponse } from "../interfaces/Response";
 
-export const loginUser = async (
-  email: string,
-  password: string,
-  setUser: (response: AuthResponse) => void
-) => {
+export const loginUser = async (email: string, password: string) => {
   // Check if user exists
   try {
     const request = await fetch("http://localhost:8080/auth/login", {
@@ -15,9 +11,8 @@ export const loginUser = async (
       body: JSON.stringify({ email, password }),
     });
     const response = (await request.json()) as AuthResponse;
-    console.log(response);
-    setUser(response);
+    return response;
   } catch (err) {
-    return { msg: "Hubo un error con el servidor" };
+    console.log(err);
   }
 };

@@ -42,7 +42,8 @@ export const RegisterForm = () => {
 
       <Button
         buttonText="Crear mi cuenta"
-        onClick={() => registerUser(name, email, password, setUser)}
+        onClick={() => registerUser(name, email, password)}
+        StateAction={setUser}
       />
       <Small
         withLink

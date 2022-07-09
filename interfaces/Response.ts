@@ -1,5 +1,12 @@
 export interface Response {
+  errors?: ExpressError[];
+}
+
+interface ExpressError {
+  location: string;
   msg: string;
+  param: string;
+  value: string;
 }
 
 export interface AuthResponse extends Response {

@@ -4,12 +4,16 @@ import { createProduct } from "../helpers/product";
 import { ImageUploader } from "./ImageUploader";
 import { useField } from "../hooks/useField";
 import productStore from "../store/product";
+import authStore from "../store/auth";
 
 export const ProductForm = () => {
+  const token = authStore((state) => state.token);
+
   const { value, onChange } = useField({
     name: "",
     price: 0,
   });
+
   const image = productStore((state) => state.image);
 
   return (
@@ -30,7 +34,7 @@ export const ProductForm = () => {
         />
         <Button
           buttonText="Crear producto"
-          onClick={() => createProduct(value.name, value.price, image)}
+          onClick={() => createProduct(value.name, value.price, image, token)}
         />
       </Box>
     </div>
