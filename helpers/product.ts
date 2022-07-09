@@ -20,3 +20,18 @@ export const createProduct = async (
     console.log(err);
   }
 };
+
+export const getProducts = async (token: string) => {
+  try {
+    const request = await fetch("http://localhost:8080/product/", {
+      headers: {
+        "Content-Type": "application/json",
+        Auth: token,
+      },
+    });
+
+    const response = await request.json();
+    console.log(response);
+    return response;
+  } catch (err) {}
+};

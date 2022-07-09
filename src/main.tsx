@@ -5,6 +5,7 @@ import {
   Dashboard,
   CreateOrder,
   CreateProduct,
+  Products,
 } from "../pages/index";
 import { Layout } from "../layouts/Layout";
 import ReactDOM from "react-dom/client";
@@ -23,7 +24,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         {/* Private routes */}
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/order" element={<CreateOrder />} />
-        <Route path="/product" element={<CreateProduct />} />
+        <Route path="/create-product" element={<CreateProduct />} />
+        <Route path="/products" element={<Products />} />
       </Routes>
     </Layout>
   </BrowserRouter>

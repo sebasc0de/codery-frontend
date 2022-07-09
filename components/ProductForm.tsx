@@ -8,13 +8,12 @@ import authStore from "../store/auth";
 
 export const ProductForm = () => {
   const token = authStore((state) => state.token);
+  const image = productStore((state) => state.image);
 
   const { value, onChange } = useField({
     name: "",
     price: 0,
   });
-
-  const image = productStore((state) => state.image);
 
   return (
     <div className="flex flex-col gap-3 items-center w-full">

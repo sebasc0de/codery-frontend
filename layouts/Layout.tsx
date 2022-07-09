@@ -5,9 +5,7 @@ import authStore from "../store/auth";
 export const Layout = ({ children }: Props) => {
   const navigate = useNavigate();
 
-  const { token, ...rest } = authStore();
-
-  console.log(rest);
+  const token = authStore((state) => state.token);
 
   useEffect(() => {
     token ? navigate("/dashboard") : navigate("/login");

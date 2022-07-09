@@ -16,3 +16,4 @@ export { Spacer } from "./Spacer";
 export { Title } from "./Title";
 export { Wrapper } from "./Wrapper";
 export { ProductForm } from "../components/ProductForm";
+export { ProductCard } from "./ProductCard";
