@@ -17,5 +17,5 @@ export { Title } from "./Title";
 export { Wrapper } from "./Wrapper";
 export { ProductForm } from "../components/ProductForm";
 export { ProductCard } from "./ProductCard";
-export { Searchbar } from "./Searchbar";
-export { SearchResults } from "./SearchResults";
+export { Searchbar } from "./Searchbar/Searchbar";
+export { SearchResults } from "./Searchbar/SearchResults";

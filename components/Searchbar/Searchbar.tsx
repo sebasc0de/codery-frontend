@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { SearchBarProps } from "./SearchBarProps";
 import { SearchResults } from "./SearchResults";
+import { useState } from "react";
 
-export const Searchbar = () => {
+export const Searchbar = ({ searchInDatabase }: SearchBarProps) => {
   const [search, setSearch] = useState("");
 
   return (
@@ -12,7 +13,7 @@ export const Searchbar = () => {
         placeholder="Haz tu busqueda..."
         value={search}
       />
-      <SearchResults keyword={search} />
+      <SearchResults searchInDatabase={searchInDatabase} keyword={search} />
     </div>
   );
 };

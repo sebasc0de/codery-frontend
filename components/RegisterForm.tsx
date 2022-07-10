@@ -4,9 +4,12 @@ import { Small } from "./Small";
 import { Title } from "./Title";
 import { useField } from "../hooks/useField";
 import authStore from "../store/auth";
+import { useNavigate } from "react-router-dom";
 
 export const RegisterForm = () => {
   const { setUser } = authStore();
+
+  const navigate = useNavigate();
 
   // Manage email and password onChange handler
   const { value, onChange } = useField({
@@ -43,6 +46,7 @@ export const RegisterForm = () => {
       <Button
         buttonText="Crear mi cuenta"
         onClick={() => registerUser(name, email, password)}
+        redirectAction={() => navigate("/dashboard")}
         StateAction={setUser}
       />
       <Small
