@@ -3,10 +3,14 @@ import { Small, Button } from "./index";
 import { Title } from "./Title";
 import { useField } from "../hooks/useField";
 import authStore from "../store/auth";
+import { useNavigate } from "react-router-dom";
 
 export const LoginForm = () => {
   // Set user global store
   const setUser = authStore((state) => state.setUser);
+
+  // Redirect
+  const navigate = useNavigate();
 
   // On change input state User and password
   const { value, onChange } = useField({
@@ -32,6 +36,7 @@ export const LoginForm = () => {
       />
       <Button
         buttonText="Iniciar sesion"
+        redirectAction={() => navigate("/dashboard")}
         StateAction={setUser}
         onClick={() => loginUser(value.email, value.password)}
       />

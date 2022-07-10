@@ -1,12 +1,18 @@
 import { useState } from "react";
 
-export const Button = ({ buttonText, onClick, StateAction }: Props) => {
+export const Button = ({
+  buttonText,
+  onClick,
+  StateAction,
+  redirectAction,
+}: Props) => {
   const [loading, setLoading] = useState(false);
 
   const actionHandler = () => {
     setLoading(true);
     onClick().then((response) => {
       StateAction && StateAction(response);
+      redirectAction && redirectAction();
       setLoading(false);
     });
   };
@@ -25,4 +31,5 @@ interface Props {
   buttonText: string;
   onClick: () => Promise<any>;
   StateAction?: (args: any) => void;
+  redirectAction?: () => void;
 }
