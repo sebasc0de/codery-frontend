@@ -6,6 +6,9 @@ export const Dashboard = () => {
       <Link to="/create-product">
         <button>Crear producto</button>
       </Link>
+      <Link to="/create-order">
+        <button>Crear pedido</button>
+      </Link>
       <Link to="/products">
         <button>Productos</button>
       </Link>

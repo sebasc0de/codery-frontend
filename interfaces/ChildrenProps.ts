@@ -1,6 +1,6 @@
-import React, { ReactElement } from "react";
+import { ReactNode } from "react";
 
 export interface ChildrenProps {
-  children?: ReactElement<string> | ReactElement[];
+  children?: ReactNode | ReactNode[];
   className?: string;
 }

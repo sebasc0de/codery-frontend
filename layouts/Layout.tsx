@@ -8,7 +8,7 @@ export const Layout = ({ children }: Props) => {
   const token = authStore((state) => state.token);
 
   useEffect(() => {
-    token ? navigate("/dashboard") : navigate("/login");
+    !token && navigate("/login");
   }, [token]);
 
   return <div>{children}</div>;

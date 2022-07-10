@@ -21,9 +21,9 @@ export const createProduct = async (
   }
 };
 
-export const getProducts = async (token: string) => {
+export const getProducts = async (token: string, name?: string) => {
   try {
-    const request = await fetch("http://localhost:8080/product/", {
+    const request = await fetch(`http://localhost:8080/product/?name=${name}`, {
       headers: {
         "Content-Type": "application/json",
         Auth: token,
@@ -31,7 +31,6 @@ export const getProducts = async (token: string) => {
     });
 
     const response = await request.json();
-    console.log(response);
     return response;
   } catch (err) {}
 };

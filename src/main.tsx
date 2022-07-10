@@ -23,9 +23,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
         {/* Private routes */}
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/order" element={<CreateOrder />} />
-        <Route path="/create-product" element={<CreateProduct />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/create-order" element={<CreateOrder />} />
+        <Route path="/create-product" element={<CreateProduct />} />
       </Routes>
     </Layout>
   </BrowserRouter>
