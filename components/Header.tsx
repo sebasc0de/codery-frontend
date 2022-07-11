@@ -1,4 +1,4 @@
-import { BackArrow, Bell, User } from "../icons/index";
+import { BackArrow, Bell, Order, User } from "../icons/index";
 
 export const Header = () => {
   return (
@@ -6,6 +6,7 @@ export const Header = () => {
       <BackArrow />
       <div className="flex gap-4">
         <User />
+        <Order />
         <Bell />
       </div>
     </header>

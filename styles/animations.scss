@@ -1,9 +1,37 @@
-.fadeIn {
-  animation: fadeIn forwards 0.8s ease-in-out;
+// Side in
+
+.sideIn {
+  animation: sideIn forwards 0.8s ease-in-out;
 }
 
-.fadeOut {
-  animation: fadeOut forwards 0.8s ease-in-out;
+@keyframes sideIn {
+  from {
+    transform: translateX(300px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+// Side out
+
+.sideOut {
+  animation: sideOut normal 0.8s ease-in-out;
+}
+
+@keyframes sideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(300px);
+  }
+}
+
+// Fade in
+
+.fadeIn {
+  animation: fadeIn forwards 0.8s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -16,12 +44,18 @@
   }
 }
 
+// Fade out
+
+.fadeOut {
+  animation: fadeOut forwards 0.8s ease-in-out;
+}
+
 @keyframes fadeOut {
   from {
     opacity: 1;
   }
   to {
-    transform: translateY(-15px);
+    transform: translateY(-10px);
     opacity: 0;
   }
 }

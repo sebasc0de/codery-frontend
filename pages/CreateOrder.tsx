@@ -1,9 +1,13 @@
-import { Header, Logo, Message, Searchbar } from "../components";
+import cartStore from "../store/cart";
+import { Header, Message, Searchbar } from "../components";
 import { searchProductByName } from "../helpers/product";
 
 export const CreateOrder = () => {
+  const cart = cartStore((state) => state.cart);
+  console.log(cart);
+
   return (
-    <section>
+    <section className="flex flex-col justify-between">
       <Header />
       <Message
         img="./icons/burger.png"
@@ -11,7 +15,7 @@ export const CreateOrder = () => {
         message="Elije los productos que deseas incluir en tu orden."
       />
       <Searchbar searchInDatabase={searchProductByName} />
-      <Logo small />
+      <button>Continuar</button>
     </section>
   );
 };

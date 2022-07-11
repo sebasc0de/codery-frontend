@@ -6,10 +6,13 @@ import { Notification } from "./Notification";
 import { useField } from "../hooks/useField";
 import authStore from "../store/auth";
 import productStore from "../store/product";
+import usePortal from "../hooks/usePortal";
 
 export const ProductForm = () => {
   const token = authStore((state) => state.token);
   const image = productStore((state) => state.image);
+
+  const { addPortal, hidePortal, show } = usePortal();
 
   const { value, onChange } = useField({
     name: "",
@@ -21,23 +24,22 @@ export const ProductForm = () => {
       <ImageUploader />
       <Box>
         <input
-          value={value.name}
           name="name"
           onChange={(e) => onChange(e.target)}
           placeholder="Nombre del producto"
         />
         <input
-          value={value.price}
           name="price"
           onChange={(e) => onChange(e.target)}
           placeholder="Precio del producto"
         />
         <Button
           buttonText="Crear producto"
+          showNotification={addPortal}
           onClick={() => createProduct(value.name, value.price, image, token)}
         />
       </Box>
-      <Notification msg="hola" />
+      <Notification show={show} setShow={hidePortal} msg="hola" />
     </div>
   );
 };

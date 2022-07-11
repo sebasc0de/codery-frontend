@@ -9,6 +9,19 @@
   margin: 1rem 0;
 }
 
+.cart-card {
+  color: $primary;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  box-shadow: 0px 2px 20px 1px rgba($primary, 0.15);
+  padding: 2.5% 5%;
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  border-left: 6px solid $accent;
+}
+
 .msg-card {
   color: $primary;
   font-weight: 700;

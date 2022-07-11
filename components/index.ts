@@ -21,3 +21,5 @@ export { Small } from "./Small";
 export { Spacer } from "./Spacer";
 export { Title } from "./Title";
 export { Wrapper } from "./Wrapper";
+export { Cart } from "./Cart";
+export { CartItem } from "./CartItem";

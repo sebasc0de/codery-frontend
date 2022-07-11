@@ -15,7 +15,7 @@ export const SearchProduct = ({ keyword, searchInDatabase }: Props) => {
   }, [keyword]);
 
   return (
-    <div className="h-96 overflow-y-scroll">
+    <div className="h-72 overflow-y-scroll">
       {results.map((item) => (
         <ProductCard key={item.id} {...item} />
       ))}

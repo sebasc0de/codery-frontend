@@ -12,11 +12,12 @@ export interface Product {
   name: string;
   price: number;
   image: string;
+  user: string;
 }
 
 export type Order = {
   shippingData: Shipping;
-  items: OrderItem[];
+  items: ProductInCart[];
   user: User;
   delivered: boolean;
 };
@@ -28,8 +29,7 @@ export type Shipping = {
   notes: string;
 };
 
-export type OrderItem = {
-  productName: string;
+export interface ProductInCart extends Product {
   quantity: number;
-  price?: number;
-};
+  price: number;
+}

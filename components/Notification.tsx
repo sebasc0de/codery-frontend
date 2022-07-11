@@ -1,17 +1,24 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { createPortal } from "react-dom";
 
-export const Notification = ({ msg }: { msg: string }) => {
-  const [show, setShow] = useState(true);
+export const Notification = ({ msg, show }: Props) => {
+  const [styles, setStyles] = useState("success fadeIn");
 
-  useEffect(() => {
-    const timeOut = setTimeout(() => {
-      setShow(false);
-    }, 3000);
-
-    return () => {
-      clearTimeout(timeOut);
-    };
-  }, []);
-
-  return <div className={`success ${show ? "fadeIn" : "fadeOut"}`}>{msg}</div>;
+  return (
+    <>
+      {show &&
+        createPortal(
+          <div onClick={() => setStyles("success fadeOut")} className={styles}>
+            {msg}
+          </div>,
+          document.querySelector("#portal") as any
+        )}
+    </>
+  );
 };
+
+interface Props {
+  msg: string;
+  show: boolean;
+  setShow: () => void;
+}
