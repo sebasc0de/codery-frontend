@@ -1,19 +1,23 @@
-import { SearchBarProps } from "./SearchBarProps";
-import { SearchResults } from "./SearchResults";
+import { SearchProduct } from "./SearchProduct";
 import { useState } from "react";
+import { Product } from "../types";
 
 export const Searchbar = ({ searchInDatabase }: SearchBarProps) => {
   const [search, setSearch] = useState("");
 
   return (
-    <div className="relative">
+    <div>
       <input
         onChange={(e) => setSearch(e.target.value)}
         type="search"
         placeholder="Haz tu busqueda..."
         value={search}
       />
-      <SearchResults searchInDatabase={searchInDatabase} keyword={search} />
+      <SearchProduct searchInDatabase={searchInDatabase} keyword={search} />
     </div>
   );
 };
+
+export interface SearchBarProps {
+  searchInDatabase: (token: string, keyword: string) => Promise<Product[]>;
+}

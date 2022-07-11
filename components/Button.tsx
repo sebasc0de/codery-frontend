@@ -5,14 +5,20 @@ export const Button = ({
   onClick,
   StateAction,
   redirectAction,
+  showNotification,
 }: Props) => {
   const [loading, setLoading] = useState(false);
 
   const actionHandler = () => {
     setLoading(true);
     onClick().then((response) => {
+      // Define global state
       StateAction && StateAction(response);
+      // Redirect after server response
       redirectAction && redirectAction();
+      // Show notitification after server response
+      showNotification && showNotification();
+      //Set loader to false
       setLoading(false);
     });
   };
@@ -32,4 +38,5 @@ interface Props {
   onClick: () => Promise<any>;
   StateAction?: (args: any) => void;
   redirectAction?: () => void;
+  showNotification?: () => void;
 }

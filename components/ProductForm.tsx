@@ -2,9 +2,10 @@ import { Box } from "./Box";
 import { Button } from "./Button";
 import { createProduct } from "../helpers/product";
 import { ImageUploader } from "./ImageUploader";
+import { Notification } from "./Notification";
 import { useField } from "../hooks/useField";
-import productStore from "../store/product";
 import authStore from "../store/auth";
+import productStore from "../store/product";
 
 export const ProductForm = () => {
   const token = authStore((state) => state.token);
@@ -36,6 +37,7 @@ export const ProductForm = () => {
           onClick={() => createProduct(value.name, value.price, image, token)}
         />
       </Box>
+      <Notification msg="hola" />
     </div>
   );
 };
