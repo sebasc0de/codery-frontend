@@ -7,7 +7,28 @@
   background-color: white;
   border-radius: 5px;
   margin: 1rem 0;
-  border-left: 6px solid $accent;
+}
+
+.msg-card {
+  color: $primary;
+  font-weight: 700;
+  line-height: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0px 2px 20px 1px rgba($primary, 0.2);
+  width: 100%;
+  padding: 1.5% 1%;
+  background-color: white;
+  border-radius: 5px;
+  margin: 1rem 0;
+  .img {
+    background: $accent;
+    padding: 0.475rem;
+    width: 3rem;
+    border-radius: 5px;
+    display: block;
+  }
 }
 
 .search-card {
