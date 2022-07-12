@@ -79,6 +79,7 @@ section.column {
 
 .imageUploader {
   overflow: hidden;
+  z-index: 10;
   border-radius: 5px;
   display: block;
   img {
