@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useFetch } from "../hooks";
 
 export const Button = ({
   buttonText,
@@ -7,18 +7,14 @@ export const Button = ({
   redirectAction,
   showNotification,
 }: Props) => {
-  const [loading, setLoading] = useState(false);
+  const { setResponse, errors, setLoading, loading } = useFetch();
+
+  console.log("my errors", errors);
 
   const actionHandler = () => {
     setLoading(true);
     onClick().then((response) => {
-      // Define global state
-      StateAction && StateAction(response);
-      // Redirect after server response
-      redirectAction && redirectAction();
-      // Show notitification after server response
-      showNotification && showNotification();
-      //Set loader to false
+      setResponse(response);
       setLoading(false);
     });
   };

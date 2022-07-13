@@ -5,6 +5,7 @@ import { Title } from "./Title";
 import { useField } from "../hooks/useField";
 import { useNavigate } from "react-router-dom";
 import authStore from "../store/auth";
+import { useFetch } from "../hooks";
 
 export const RegisterForm = () => {
   const { setUser } = authStore();
@@ -46,8 +47,6 @@ export const RegisterForm = () => {
       <Button
         buttonText="Crear mi cuenta"
         onClick={() => registerUser(name, email, password)}
-        redirectAction={() => navigate("/dashboard")}
-        StateAction={setUser}
       />
       <Small
         withLink

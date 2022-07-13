@@ -2,7 +2,7 @@ export interface Response {
   errors?: ExpressError[];
 }
 
-interface ExpressError {
+export interface ExpressError {
   location: string;
   msg: string;
   param: string;
