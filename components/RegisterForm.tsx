@@ -1,10 +1,10 @@
 import { Button } from "./Button";
-import { registerUser } from "../helpers/registerUser";
+import { registerUser } from "../helpers/auth";
 import { Small } from "./Small";
 import { Title } from "./Title";
 import { useField } from "../hooks/useField";
-import authStore from "../store/auth";
 import { useNavigate } from "react-router-dom";
+import authStore from "../store/auth";
 
 export const RegisterForm = () => {
   const { setUser } = authStore();

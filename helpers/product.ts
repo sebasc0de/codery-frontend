@@ -35,7 +35,7 @@ export const getProducts = async (token: string) => {
   } catch (err) {}
 };
 
-export const searchProductByName = async (token: string, name: string) => {
+export const searchProductByName = async (token: string, name: string = "") => {
   const nameQuery = "?name=" + name;
 
   try {

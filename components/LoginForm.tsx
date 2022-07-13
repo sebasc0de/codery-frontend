@@ -1,4 +1,4 @@
-import { loginUser } from "../helpers/loginUser";
+import { loginUser } from "../helpers/auth";
 import { Small, Button } from "./index";
 import { Title } from "./Title";
 import { useField } from "../hooks/useField";
