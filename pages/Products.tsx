@@ -1,6 +1,6 @@
 import { getProducts } from "../helpers/product";
 import { Header, Logo, ProductCard } from "../components";
-import { Product } from "../types";
+import { Product } from "../interfaces/Product";
 import { useEffect, useState } from "react";
 import authStore from "../store/auth";
 
@@ -18,7 +18,7 @@ export const Products = () => {
       <Header />
       <ul>
         {products.map((item) => (
-          <ProductCard key={item.id} {...item} />
+          <ProductCard key={item.id} product={item} />
         ))}
       </ul>
       <Logo small />

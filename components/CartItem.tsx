@@ -1,4 +1,4 @@
-import { ProductInCart } from "../types";
+import { ProductInCart } from "../interfaces/Product";
 
 export const CartItem = (product: ProductInCart) => {
   return (

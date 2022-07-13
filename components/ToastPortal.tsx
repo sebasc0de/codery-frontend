@@ -22,11 +22,11 @@ export const ToastPortal = forwardRef(({}, ref) => {
 
   return loaded ? (
     createPortal(
-      <div>
+      <>
         {toasts.map((item) => (
           <Toast {...item} key={item.id} onClose={() => removeToast(item.id)} />
         ))}
-      </div>,
+      </>,
       document.getElementById(portalId) as any
     )
   ) : (

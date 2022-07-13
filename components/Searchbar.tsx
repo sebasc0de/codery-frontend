@@ -1,6 +1,6 @@
 import { SearchProduct } from "./SearchProduct";
 import { useState } from "react";
-import { Product } from "../types";
+import { Product } from "../interfaces/index";
 
 export const Searchbar = ({ searchInDatabase }: SearchBarProps) => {
   const [search, setSearch] = useState("");
