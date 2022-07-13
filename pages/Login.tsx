@@ -1,4 +1,4 @@
-import { LoginForm, Logo, Spacer, ToastPortal } from "../components/index";
+import { LoginForm, Logo, Spacer } from "../components/index";
 
 export const Login = () => {
   return (
@@ -7,7 +7,6 @@ export const Login = () => {
       <Logo />
       <LoginForm />
       <Spacer />
-      <ToastPortal />
     </section>
   );
 };

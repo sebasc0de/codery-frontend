@@ -8,7 +8,7 @@ export const useDOM = () => {
   useEffect(() => {
     const div = document.createElement("div");
     div.id = portalId;
-    div.className = "success";
+    div.className = "fixed bottom-2 left-2 z-10";
     document.getElementsByTagName("body")[0].prepend(div);
     setLoaded(true);
     return () => {

@@ -4,7 +4,6 @@ import { searchProductByName } from "../helpers/product";
 
 export const CreateOrder = () => {
   const cart = cartStore((state) => state.cart);
-  console.log(cart);
 
   return (
     <section className="flex flex-col justify-between">
